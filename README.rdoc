@@ -81,6 +81,22 @@ you may extract this code to a module and mix it from the presenter:
     end
   end
 
+Then tell the presented to use the module:
+
+  # app/presenters/users_presenter.rb
+  ...
+  presents :users, UserMixin
+  ...
+
+Now you can use the new method in your views:
+
+  # app/views/users/index.html.haml
+  %ul
+    - @users_presenter.users.each do |user|
+      %li
+        = user.name
+        = user.age_cca
+
 == Typecasting
 
 These types are supported out of the box:
