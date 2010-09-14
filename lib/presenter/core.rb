@@ -62,10 +62,6 @@ class Presenter
           end
           items
         end
-
-        def find_#{name}
-          raise NotImplementedError.new("find_#{name} method not implemented")
-        end
       EOS
     end
   end
